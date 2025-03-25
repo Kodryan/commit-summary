@@ -2,7 +2,6 @@ package resources
 
 import (
 	"errors"
-	"github.com/joho/godotenv"
 	"os"
 )
 
@@ -15,10 +14,6 @@ func NewEnv() *Env {
 }
 
 func (e *Env) Load() error {
-	err := godotenv.Load()
-	if err != nil {
-		return err
-	}
 	key, ok := os.LookupEnv("OPENAI_API_KEY"); if !ok {
 		return errors.New("OPENAI_API_KEY is not set")
 	}
