@@ -18,7 +18,7 @@ const (
 func main() {
 	resources, err := resources.Get()
 	if err != nil {
-		fmt.Println("Error:", err)
+		fmt.Fprintf(os.Stderr, "Error: %v", err)
 		return
 	}
 
